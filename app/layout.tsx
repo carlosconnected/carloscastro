@@ -7,7 +7,7 @@ const noto = Noto_Sans_Mono({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Carlos Castro",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/favicon.png" }],
 };
 
 export default function RootLayout({
