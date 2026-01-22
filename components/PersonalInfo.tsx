@@ -6,7 +6,7 @@ export default function PersonalInfo() {
   return (
     <section className="w-full flex justify-center">
       <div className="w-full max-w-sm rounded-xl bg-white p-8 text-center shadow-2xl">
-        <div className="mx-auto mb-4 h-20 w-20 overflow-hidden rounded-full">
+        <div className="mx-auto mb-4 h-20 w-20 overflow-hidden rounded-full animate-flag-wind">
           <Image
             src="/yo.jpg"
             alt="Carlos"

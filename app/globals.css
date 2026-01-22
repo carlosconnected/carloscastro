@@ -111,6 +111,51 @@ body {
   animation-fill-mode: both;
 }
 
+/* Flag wind animation for profile image */
+@keyframes flagWind {
+  0% {
+    transform: scale(1) translateX(0) translateY(0) rotate(0deg);
+  }
+  4.5% {
+    transform: scale(1.5) translateX(0) translateY(0) rotate(0deg);
+  }
+  9% {
+    transform: scale(1.5) translateX(5px) translateY(-3px) rotate(2deg);
+  }
+  13.6% {
+    transform: scale(1.5) translateX(-4px) translateY(2px) rotate(-1.5deg);
+  }
+  18.2% {
+    transform: scale(1.5) translateX(6px) translateY(-2px) rotate(2.5deg);
+  }
+  22.7% {
+    transform: scale(1.5) translateX(-3px) translateY(3px) rotate(-2deg);
+  }
+  27.3% {
+    transform: scale(1.5) translateX(4px) translateY(-4px) rotate(1.5deg);
+  }
+  31.8% {
+    transform: scale(1.5) translateX(-5px) translateY(2px) rotate(-2.5deg);
+  }
+  36.4% {
+    transform: scale(1.5) translateX(3px) translateY(-3px) rotate(2deg);
+  }
+  40.9% {
+    transform: scale(1.5) translateX(0) translateY(0) rotate(0deg);
+  }
+  45.5% {
+    transform: scale(1) translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) translateX(0) translateY(0) rotate(0deg);
+  }
+}
+
+.animate-flag-wind {
+  animation: flagWind 11s ease-in-out infinite;
+  transform-origin: center center;
+}
+
 /* Starfield background animation */
 .starfield {
   position: relative;
