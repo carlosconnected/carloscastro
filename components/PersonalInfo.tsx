@@ -17,27 +17,36 @@ export default function PersonalInfo() {
           />
         </div>
 
-        <h1 className="text-2xl font-bold text-neutral-900">
+        <h1 className="text-2xl font-bold text-neutral-900 animate-slide-in-left">
           Carlos Castro Vargas
         </h1>
 
-        <p className="mt-2 text-neutral-700">
+        <p className="mt-2 text-neutral-700 animate-slide-in-right">
           I am a Software Engineer <br /> from Peru 🇵🇪.
         </p>
 
         <div className="mt-6 flex items-center justify-center gap-3">
           <IconLink
-            href="https://www.linkedin.com/in/carlos-castro-vargas-93517122"
+            href="https://www.linkedin.com/in/carlosconnected"
             label="LinkedIn"
+            className="animate-icon-jump-1"
           >
             <FaLinkedin className="h-6 w-6" />
           </IconLink>
 
-          <IconLink href="https://github.com/carlos-peru" label="GitHub">
+          <IconLink 
+            href="https://github.com/carlosconnected" 
+            label="GitHub"
+            className="animate-icon-jump-2"
+          >
             <FaGithub className="h-6 w-6" />
           </IconLink>
 
-          <IconLink href="mailto:carlos.castro.vargas@gmail.com" label="Email">
+          <IconLink 
+            href="mailto:carlos.castro.vargas@gmail.com" 
+            label="Email"
+            className="animate-icon-jump-3"
+          >
             <FaEnvelope className="h-6 w-6" />
           </IconLink>
         </div>
@@ -50,17 +59,19 @@ function IconLink({
   href,
   label,
   children,
+  className = "",
 }: {
   href: string;
   label: string;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <Link
       href={href}
       target="_blank"
       aria-label={label}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-neutral-900 text-white shadow-sm hover:bg-neutral-800 active:translate-y-[1px]"
+      className={`inline-flex h-11 w-11 items-center justify-center rounded-md bg-neutral-900 text-white shadow-sm hover:bg-neutral-800 active:translate-y-[1px] ${className}`}
     >
       {children}
     </Link>
