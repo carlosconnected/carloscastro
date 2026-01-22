@@ -7,6 +7,7 @@ type LinkData = { label: string; path: string };
 
 const links: LinkData[] = [
   { label: "Home", path: "/" },
+  { label: "Hobbies", path: "/hobbies" },
   { label: "Sudoku", path: "/sudoku" },
 ];
 
