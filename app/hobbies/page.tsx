@@ -1,17 +1,16 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-type Activity = {
+type Hobby = {
   title: string;
   description: string;
   duration?: string;
   level?: string;
 };
 
-const activities = {
+const hobbies = {
   yoga: [
     {
       title: "Morning Flow",
@@ -92,7 +91,7 @@ const activities = {
   ],
 };
 
-export default function Activities() {
+export default function Hobbies() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="text-center mb-12">
@@ -129,8 +128,8 @@ export default function Activities() {
                 Mindful movement and body awareness
               </p>
               <div className="space-y-4">
-                {activities.yoga.map((activity, index) => (
-                  <ActivityCard key={index} activity={activity} />
+                {hobbies.yoga.map((hobby, index) => (
+                  <HobbyCard key={index} hobby={hobby} />
                 ))}
               </div>
             </div>
@@ -164,8 +163,8 @@ export default function Activities() {
                 Expressive movement and connection
               </p>
               <div className="space-y-4">
-                {activities.dancing.map((activity, index) => (
-                  <ActivityCard key={index} activity={activity} />
+                {hobbies.dancing.map((hobby, index) => (
+                  <HobbyCard key={index} hobby={hobby} />
                 ))}
               </div>
             </div>
@@ -183,8 +182,8 @@ export default function Activities() {
                 Breathing practices for energy and calm
               </p>
               <div className="space-y-4">
-                {activities.breathwork.map((activity, index) => (
-                  <ActivityCard key={index} activity={activity} />
+                {hobbies.breathwork.map((hobby, index) => (
+                  <HobbyCard key={index} hobby={hobby} />
                 ))}
               </div>
             </div>
@@ -203,20 +202,20 @@ export default function Activities() {
   );
 }
 
-function ActivityCard({ activity }: { activity: Activity }) {
+function HobbyCard({ hobby }: { hobby: Hobby }) {
   return (
     <div className="border border-neutral-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-      <h3 className="font-semibold text-neutral-900 mb-2">{activity.title}</h3>
-      <p className="text-sm text-neutral-600 mb-3">{activity.description}</p>
+      <h3 className="font-semibold text-neutral-900 mb-2">{hobby.title}</h3>
+      <p className="text-sm text-neutral-600 mb-3">{hobby.description}</p>
       <div className="flex gap-3 text-xs text-neutral-500">
-        {activity.duration && (
+        {hobby.duration && (
           <span className="bg-neutral-100 px-2 py-1 rounded">
-            {activity.duration}
+            {hobby.duration}
           </span>
         )}
-        {activity.level && (
+        {hobby.level && (
           <span className="bg-neutral-100 px-2 py-1 rounded">
-            {activity.level}
+            {hobby.level}
           </span>
         )}
       </div>

@@ -6,7 +6,7 @@ import SiteLayout from "@/components/SiteLayout";
 const noto = Noto_Sans_Mono({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
-  title: "Carlos Connected",
+  title: "Carlos Castro",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
