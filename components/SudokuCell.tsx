@@ -39,7 +39,7 @@ export default function SudokuCell({
           type="text"
           inputMode="numeric"
           pattern="[1-9]"
-          className="h-full w-full text-center outline-none border-0 bg-transparent text-neutral-900"
+          className="h-full w-full text-center outline-none border-0 bg-transparent text-blue-900"
           value={value > 0 ? String(value) : ""}
           disabled={solved}
           onChange={(e) => {

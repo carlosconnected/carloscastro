@@ -22,7 +22,7 @@ export default function PersonalInfo() {
         </h1>
 
         <p className="mt-2 text-neutral-700 animate-slide-in-right">
-          I am a Software Engineer <br /> from Peru 🇵🇪.
+          Full Stack Dev with multiple passions in life.
         </p>
 
         <div className="mt-6 flex items-center justify-center gap-3">

@@ -35,7 +35,7 @@ function shuffleArray(array: number[]): number[] {
   return array;
 }
 
-function solveSudoku(board: number[][]): boolean {
+export function solveSudoku(board: number[][]): boolean {
   const emptyCell = findEmptyCell(board);
 
   if (!emptyCell) {

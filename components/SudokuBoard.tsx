@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { generateSudoku, isSudokuSolved } from "../lib/sudoku";
+import { generateSudoku, isSudokuSolved, solveSudoku } from "../lib/sudoku";
 import SudokuCell from "./SudokuCell";
 
 type GameState = {
@@ -95,6 +95,26 @@ export default function SudokuBoard() {
     const sudokuSolved = isSudokuSolved(board);
     setSolved(sudokuSolved);
     setOpen(true);
+  };
+
+  const solvePuzzle = () => {
+    // Start from the original board to ensure we have a valid starting point
+    const boardCopy = originalBoard.map((r) => [...r]);
+    
+    // Solve the puzzle from the original state
+    const solved = solveSudoku(boardCopy);
+    
+    if (solved) {
+      // Update the board with the solved puzzle
+      setGame((prev) => {
+        localStorage.setItem("sudoku", JSON.stringify(boardCopy));
+        return { ...prev, board: boardCopy };
+      });
+      
+      // Check if it's correctly solved
+      const sudokuSolved = isSudokuSolved(boardCopy);
+      setSolved(sudokuSolved);
+    }
   };
 
   return (
@@ -192,6 +212,19 @@ export default function SudokuBoard() {
             ].join(" ")}
           >
             Check Solution
+          </button>
+
+          <button
+            onClick={solvePuzzle}
+            disabled={solved}
+            className={[
+              "rounded-md px-4 py-2 text-sm font-semibold text-white",
+              solved
+                ? "bg-neutral-900 opacity-50 cursor-not-allowed"
+                : "bg-neutral-900 hover:bg-neutral-700",
+            ].join(" ")}
+          >
+            Solve
           </button>
         </div>
       </div>
