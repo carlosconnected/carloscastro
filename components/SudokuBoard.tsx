@@ -10,7 +10,16 @@ type GameState = {
 };
 
 function loadInitialGame(): GameState {
-  // Runs on client (this is a "use client" file)
+  // Check if we're in the browser before accessing localStorage
+  if (typeof window === "undefined") {
+    // Return a default state during SSR
+    const original = generateSudoku();
+    return {
+      board: original.map((r) => [...r]),
+      originalBoard: original,
+    };
+  }
+
   const saved = localStorage.getItem("sudoku");
   const savedOriginal = localStorage.getItem("originalSudoku");
 
