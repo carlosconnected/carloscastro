@@ -5,6 +5,7 @@ This is my personal website built with Next.js, showcasing my portfolio, hobbies
 ## About
 
 This is a personal website that includes:
+
 - **Home**: Personal information and social links
 - **Hobbies**: A showcase of my passions including yoga, dancing, and breathwork practices
 - **Sudoku**: An interactive Sudoku game
@@ -21,18 +22,20 @@ This is a personal website that includes:
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 22+
 - npm, yarn, pnpm, or bun
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/carlosconnected/carloscastro.git
 cd carloscastro
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -42,6 +45,7 @@ pnpm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 # or
