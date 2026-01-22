@@ -38,13 +38,26 @@ export default function SudokuCell({
         <input
           type="text"
           inputMode="numeric"
-          pattern="[0-9]*"
+          pattern="[1-9]"
           className="h-full w-full text-center outline-none border-0 bg-transparent text-neutral-900"
           value={value > 0 ? String(value) : ""}
           disabled={solved}
           onChange={(e) => {
-            const next = e.target.value.replace(/\D/g, "").slice(0, 1);
-            onChange(next ? Number(next) : 0);
+            const raw = e.target.value;
+            const digit = raw.replace(/\D/g, "").slice(0, 1); // keep only one digit
+
+            // allow blank (clears cell)
+            if (!digit) return onChange(0);
+
+            const n = Number(digit);
+
+            // only 1..9
+            if (n >= 1 && n <= 9) onChange(n);
+            else onChange(0);
+          }}
+          onKeyDown={(e) => {
+            // optional: block minus, plus, e, etc (helps on some keyboards)
+            if (["-", "+", "e", "E", "."].includes(e.key)) e.preventDefault();
           }}
         />
       )}
