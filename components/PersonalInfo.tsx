@@ -8,7 +8,7 @@ export default function PersonalInfo() {
       <div className="w-full max-w-sm rounded-xl bg-white p-8 text-center shadow-2xl">
         <div className="mx-auto mb-4 h-20 w-20 overflow-hidden rounded-full">
           <Image
-            src="/myself.jpg"
+            src="/yo.jpg"
             alt="Carlos"
             width={160}
             height={160}
