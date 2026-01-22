@@ -38,27 +38,51 @@ body {
   }
 }
 
-/* Text slide in from left */
+/* Text slide in from left with fade out cycle */
 @keyframes slideInFromLeft {
-  from {
+  0% {
     opacity: 0;
     transform: translateX(-50px);
   }
-  to {
+  11.68% {
     opacity: 1;
     transform: translateX(0);
+  }
+  84.67% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  96.35% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
   }
 }
 
-/* Text slide in from right */
+/* Text slide in from right with fade out cycle */
 @keyframes slideInFromRight {
-  from {
+  0% {
     opacity: 0;
     transform: translateX(50px);
   }
-  to {
+  11.68% {
     opacity: 1;
     transform: translateX(0);
+  }
+  84.67% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  96.35% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(50px);
   }
 }
 
@@ -78,9 +102,88 @@ body {
 }
 
 .animate-slide-in-left {
-  animation: slideInFromLeft 0.8s ease-out forwards;
+  animation: slideInFromLeft 6.85s ease-out infinite;
+  animation-fill-mode: both;
 }
 
 .animate-slide-in-right {
-  animation: slideInFromRight 0.8s ease-out forwards;
+  animation: slideInFromRight 6.85s ease-out infinite;
+  animation-fill-mode: both;
+}
+
+/* Starfield background animation */
+.starfield {
+  position: relative;
+  background: #000000;
+  overflow: hidden;
+}
+
+.starfield::before,
+.starfield::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(2px 2px at 30px 5px, #fff, transparent),
+    radial-gradient(1px 1px at 60px 10px, #fff, transparent),
+    radial-gradient(2px 2px at 90px 20px, #fff, transparent),
+    radial-gradient(1px 1px at 25px 8px, #fff, transparent),
+    radial-gradient(2px 2px at 55px 65px, #fff, transparent),
+    radial-gradient(1px 1px at 85px 70px, #fff, transparent),
+    radial-gradient(2px 2px at 18px 75px, #fff, transparent),
+    radial-gradient(1px 1px at 48px 15px, #fff, transparent),
+    radial-gradient(2px 2px at 78px 25px, #fff, transparent),
+    radial-gradient(1px 1px at 12px 32px, #fff, transparent),
+    radial-gradient(2px 2px at 42px 55px, #fff, transparent),
+    radial-gradient(1px 1px at 72px 5px, #fff, transparent),
+    radial-gradient(2px 2px at 3px 18px, #fff, transparent),
+    radial-gradient(1px 1px at 33px 35px, #fff, transparent),
+    radial-gradient(2px 2px at 63px 25px, #fff, transparent),
+    radial-gradient(1px 1px at 93px 45px, #fff, transparent),
+    radial-gradient(2px 2px at 17px 28px, #fff, transparent),
+    radial-gradient(1px 1px at 47px 52px, #fff, transparent),
+    radial-gradient(2px 2px at 77px 22px, #fff, transparent),
+    radial-gradient(1px 1px at 7px 62px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  opacity: 0.8;
+  animation: starfieldMove 67s linear infinite;
+  pointer-events: none;
+}
+
+.starfield::after {
+  background: 
+    radial-gradient(1px 1px at 36px 6px, #fff, transparent),
+    radial-gradient(1px 1px at 72px 42px, #fff, transparent),
+    radial-gradient(1px 1px at 6px 66px, #fff, transparent),
+    radial-gradient(1px 1px at 42px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 78px 54px, #fff, transparent),
+    radial-gradient(1px 1px at 12px 18px, #fff, transparent),
+    radial-gradient(1px 1px at 48px 54px, #fff, transparent),
+    radial-gradient(1px 1px at 84px 24px, #fff, transparent),
+    radial-gradient(1px 1px at 20px 72px, #fff, transparent),
+    radial-gradient(1px 1px at 56px 36px, #fff, transparent),
+    radial-gradient(1px 1px at 92px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 28px 48px, #fff, transparent),
+    radial-gradient(1px 1px at 64px 24px, #fff, transparent),
+    radial-gradient(1px 1px at 10px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 46px 42px, #fff, transparent),
+    radial-gradient(1px 1px at 82px 54px, #fff, transparent),
+    radial-gradient(1px 1px at 18px 48px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  opacity: 0.6;
+  animation: starfieldMove 100s linear infinite reverse;
+}
+
+@keyframes starfieldMove {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100px, -100px);
+  }
 }
