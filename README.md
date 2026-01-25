@@ -66,6 +66,20 @@ The page will auto-update as you edit the files.
 - `npm run build` - Build the production application
 - `npm run start` - Start the production server (after building)
 - `npm run lint` - Run ESLint to check code quality
+- `npm run test` - Run Jest unit tests
+- `npm run test:watch` - Run tests in watch mode
+
+## Testing
+
+- **Unit tests** for the Sudoku pure functions (`generateSudoku`, `solveSudoku`, `isSudokuSolved`) are in `lib/sudoku.test.ts`.
+- **Component tests** using React Testing Library cover `PersonalInfo`, `Navbar`, and `SudokuCell` in `components/*.test.tsx`.
+
+Run all tests:
+
+```bash
+pnpm install   # if you added new deps
+pnpm test
+```
 
 ## Project Structure
 
@@ -81,7 +95,8 @@ carloscastro/
 │   ├── SudokuBoard.tsx    # Sudoku game board
 │   └── ...
 ├── lib/                    # Utility functions
-│   └── sudoku.ts          # Sudoku logic
+│   ├── sudoku.ts          # Sudoku logic
+│   └── sudoku.test.ts     # Sudoku unit tests
 ├── public/                 # Static assets
 └── app/globals.css        # Global styles
 ```
