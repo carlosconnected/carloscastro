@@ -126,6 +126,12 @@ function hasUniqueSolution(board: number[][]): boolean {
 export function isSudokuSolved(board: number[][]): boolean {
   const N = board.length;
 
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < N; j++) {
+      if (board[i][j] === 0) return false;
+    }
+  }
+
   // Check rows and columns
   for (let i = 0; i < N; i++) {
     const rowSet = new Set();
