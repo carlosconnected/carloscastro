@@ -1,10 +1,11 @@
-/** @type {import('jest').Config} */
-const config = {
+import type { Config } from "jest";
+
+const config: Config = {
   preset: "ts-jest",
   testEnvironment: "jsdom",
   roots: ["<rootDir>"],
   testMatch: ["**/*.test.ts", "**/*.test.tsx"],
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
     "^next/image$": "<rootDir>/__mocks__/next/image.tsx",
@@ -18,4 +19,4 @@ const config = {
   ],
 };
 
-module.exports = config;
+export default config;
