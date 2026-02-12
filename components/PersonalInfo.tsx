@@ -18,7 +18,7 @@ export default function PersonalInfo() {
         </div>
 
         <h1 className="text-2xl font-bold text-neutral-900 animate-slide-in-left">
-          Carlos Castro
+          Carlos Castro Vargas
         </h1>
 
         <p className="mt-2 text-neutral-700 animate-slide-in-right">
