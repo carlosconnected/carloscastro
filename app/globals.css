@@ -2,13 +2,15 @@
 
 /* Icon jump animation - each icon jumps for 2s, then waits */
 @keyframes iconJump {
-  0%, 33.33% {
+  0%,
+  33.33% {
     transform: translateY(0);
   }
   16.66% {
     transform: translateY(-12px);
   }
-  33.33%, 100% {
+  33.33%,
+  100% {
     transform: translateY(0);
   }
 }
@@ -86,6 +88,21 @@
   animation-fill-mode: both;
 }
 
+@keyframes revealFromCenter {
+  from {
+    clip-path: inset(0 50% 0 50%);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0% 0 0%);
+    opacity: 1;
+  }
+}
+
+.animate-reveal {
+  animation: revealFromCenter 3s ease-out forwards;
+}
+
 /* Flag wind animation for profile image */
 @keyframes flagWind {
   0% {
@@ -146,7 +163,7 @@
   left: 0;
   width: 110%;
   height: 110%;
-  background: 
+  background:
     radial-gradient(2px 2px at 30px 5px, #fff, transparent),
     radial-gradient(1px 1px at 60px 10px, #fff, transparent),
     radial-gradient(2px 2px at 90px 20px, #fff, transparent),
@@ -175,7 +192,7 @@
 }
 
 .starfield::after {
-  background: 
+  background:
     radial-gradient(1px 1px at 36px 6px, #fff, transparent),
     radial-gradient(1px 1px at 72px 42px, #fff, transparent),
     radial-gradient(1px 1px at 6px 66px, #fff, transparent),

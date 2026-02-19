@@ -35,8 +35,7 @@ export default function PersonalInfo() {
           Open to remote contract & full-time opportunities
         </p>
 
-        {/* Primary CTA */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 animate-reveal">
           <Link
             href="/Carlos_Castro_Vargas_2026.pdf"
             target="_blank"
