@@ -6,7 +6,7 @@ export default function PersonalInfo() {
   return (
     <section className="w-full flex justify-center">
       <div className="w-full max-w-[36rem] rounded-xl bg-white p-12 text-center shadow-2xl">
-        <div className="mx-auto mb-16 h-[120px] w-[120px] overflow-hidden rounded-full animate-flag-wind">
+        <div className="mx-auto mb-12 h-[120px] w-[120px] overflow-hidden rounded-full animate-flag-wind">
           <Image
             src="/yo.jpg"
             alt="Carlos"
@@ -22,9 +22,32 @@ export default function PersonalInfo() {
         </h1>
 
         <p className="mt-2 text-neutral-700 animate-slide-in-right">
-          Full Stack Dev with multiple passions in life.
+          Senior Fullstack & Platform Engineer
         </p>
 
+        <p className="mt-3 mx-auto max-w-md text-sm text-neutral-600">
+          React · Node.js · AWS · Kubernetes · Terraform · SQL/NoSQL
+          <br />
+          Building scalable, production-grade systems.
+        </p>
+
+        <p className="mt-4 text-sm font-medium text-green-700">
+          Open to remote contract & full-time opportunities
+        </p>
+
+        {/* Primary CTA */}
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link
+            href="/Carlos_Castro_Vargas_2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md bg-neutral-900 px-6 py-2 text-sm font-medium text-white shadow-sm hover:bg-neutral-800 active:translate-y-[1px]"
+          >
+            View Resume
+          </Link>
+        </div>
+
+        {/* Social icons */}
         <div className="mt-6 flex items-center justify-center gap-3">
           <IconLink
             href="https://www.linkedin.com/in/carlosconnected"
@@ -66,10 +89,16 @@ function IconLink({
   children: React.ReactNode;
   className?: string;
 }) {
+  const isExternal =
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("mailto:");
+
   return (
     <Link
       href={href}
-      target="_blank"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       aria-label={label}
       className={`inline-flex h-11 w-11 items-center justify-center rounded-md bg-neutral-900 text-white shadow-sm hover:bg-neutral-800 active:translate-y-[1px] ${className}`}
     >
