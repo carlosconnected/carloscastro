@@ -4,13 +4,15 @@ import PersonalInfo from "./PersonalInfo";
 describe("PersonalInfo", () => {
   it("renders the name", () => {
     render(<PersonalInfo />);
-    expect(screen.getByRole("heading", { name: /carlos castro/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /carlos castro/i }),
+    ).toBeInTheDocument();
   });
 
   it("renders the description", () => {
     render(<PersonalInfo />);
     expect(
-      screen.getByText(/full stack dev with multiple passions in life/i)
+      screen.getByText(/Open to remote contract & full-time opportunities/i),
     ).toBeInTheDocument();
   });
 
@@ -25,15 +27,15 @@ describe("PersonalInfo", () => {
     render(<PersonalInfo />);
     expect(screen.getByRole("link", { name: /linkedin/i })).toHaveAttribute(
       "href",
-      "https://www.linkedin.com/in/carlosconnected"
+      "https://www.linkedin.com/in/carlosconnected",
     );
     expect(screen.getByRole("link", { name: /github/i })).toHaveAttribute(
       "href",
-      "https://github.com/carlosconnected"
+      "https://github.com/carlosconnected",
     );
     expect(screen.getByRole("link", { name: /email/i })).toHaveAttribute(
       "href",
-      "mailto:carlos.castro.vargas@gmail.com"
+      "mailto:carlos.castro.vargas@gmail.com",
     );
   });
 
