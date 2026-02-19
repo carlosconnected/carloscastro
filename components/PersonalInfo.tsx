@@ -25,13 +25,13 @@ export default function PersonalInfo() {
           Senior Fullstack & Platform Engineer
         </p>
 
-        <p className="mt-3 mx-auto max-w-md text-sm text-neutral-600">
+        <p className="mt-3 mx-auto max-w-md text-sm text-neutral-600 animate-slide-in-left">
           React · Node.js · AWS · Kubernetes · Terraform · SQL/NoSQL
           <br />
           Building scalable, production-grade systems.
         </p>
 
-        <p className="mt-4 text-sm font-medium text-green-700">
+        <p className="mt-4 text-sm font-medium text-green-700 animate-slide-in-right">
           Open to remote contract & full-time opportunities
         </p>
 
