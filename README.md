@@ -23,7 +23,7 @@ This is a personal website that includes:
 ### Prerequisites
 
 - Node.js 22+
-- npm, yarn, pnpm, or bun
+- [pnpm](https://pnpm.io)
 
 ### Installation
 
@@ -37,23 +37,13 @@ cd carloscastro
 2. Install dependencies:
 
 ```bash
-npm install
-# or
-yarn install
-# or
 pnpm install
 ```
 
 3. Run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
@@ -62,24 +52,35 @@ The page will auto-update as you edit the files.
 
 ## Available Scripts
 
-- `npm run dev` - Start the development server
-- `npm run build` - Build the production application
-- `npm run start` - Start the production server (after building)
-- `npm run lint` - Run ESLint to check code quality
-- `npm run test` - Run Jest unit tests
-- `npm run test:watch` - Run tests in watch mode
+- `pnpm dev` - Start the development server
+- `pnpm build` - Build the production application
+- `pnpm start` - Start the production server (after building)
+- `pnpm lint` - Run ESLint to check code quality
+- `pnpm test` - Run Jest unit tests
+- `pnpm test:watch` - Run tests in watch mode
+- `pnpm test:e2e` - Run Playwright E2E tests (headless)
+- `pnpm test:e2e:ui` - Run Playwright E2E tests with the UI for debugging
+- `pnpm test:e2e:headed` - Run Playwright E2E tests with visible browser windows
 
 ## Testing
 
 - **Unit tests** for the Sudoku pure functions (`generateSudoku`, `solveSudoku`, `isSudokuSolved`) are in `lib/sudoku.test.ts`.
 - **Component tests** using React Testing Library cover `PersonalInfo`, `Navbar`, and `SudokuCell` in `components/*.test.tsx`.
+- **E2E tests** use [Playwright](https://playwright.dev) and live in `e2e/*.spec.ts`. They cover smoke (home load), navigation (navbar links), and mobile menu behavior. On first use, install browsers: `pnpm exec playwright install chromium` (or `pnpm exec playwright install` for all browsers).
 
-Run all tests:
+Run unit/component tests:
 
 ```bash
-pnpm install   # if you added new deps
 pnpm test
 ```
+
+Run E2E tests (starts the production build and runs Playwright):
+
+```bash
+pnpm test:e2e
+```
+
+See the [Playwright documentation](https://playwright.dev/docs/intro) for more on writing and debugging E2E tests.
 
 ## Project Structure
 
@@ -115,6 +116,7 @@ To learn more about the technologies used:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
 - [React Documentation](https://react.dev) - learn about React
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs) - learn about Tailwind CSS
+- [Playwright Documentation](https://playwright.dev/docs/intro) - learn about E2E testing with Playwright
 
 ## Deploy
 
