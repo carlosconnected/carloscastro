@@ -6,6 +6,12 @@ test("navbar links navigate to correct pages", async ({ page }) => {
   await expect(page).toHaveURL("/hobbies");
   await expect(page.getByRole("heading", { name: "Hobbies" })).toBeVisible();
 
+  await page.getByRole("link", { name: "Personal projects" }).click();
+  await expect(page).toHaveURL("/personal-projects");
+  await expect(
+    page.getByRole("heading", { name: "Personal projects" })
+  ).toBeVisible();
+
   await page.getByRole("link", { name: "Sudoku" }).click();
   await expect(page).toHaveURL("/sudoku");
   await expect(page.getByRole("button", { name: "New Game" })).toBeVisible();
