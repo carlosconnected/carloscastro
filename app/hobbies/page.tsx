@@ -23,33 +23,62 @@ const hobbies = {
     {
       title: "Contact Improvisation Dance",
       description:
-        "The most somatic group practice I've ever experienced. My current favorite practice.",
+        "The most somatic group practice I've ever experienced. My current favorite type of dance. I've reached alter states of mind that I could not believe was possible through body movement.",
     },
     {
       title: "Ecstatic Dance",
-      description: "Free-form movement to music. no steps to follow.",
+      description:
+        "Discovering ecstatic dance is such a gift. I love it. Such a great release. Every time I travel, I look up ecstatic dance events. I've connected with so many amazing humans.",
     },
     {
       title: "Bachata",
-      description: "Sensual and spicy",
+      description: "Currently learning.",
     },
     {
       title: "Zouk",
-      description: "Sensual and soft",
+      description: "Currently learning.",
+    },
+  ],
+  languages: [
+    {
+      title: "Spanish",
+      description:
+        "My native language. My mother tongue. The only language I spoke until my early 20s.",
+    },
+    {
+      title: "English",
+      description: "The language I learned to communicate with the world.",
+    },
+    {
+      title: "Portuguese",
+      description:
+        "Back in 2014 I studied Brazilian Portuguese on my own using some old recordings for 2 months before going to Brazil for 3 weeks. I would just speak out loud throughout my commute to work. One of my favorite moments of the day. When I landed in Brazil I spoke my broken Portuguese since day 1. Most Brazilians don't speak English, so it was such an awesome experience because just a couple of months before I had never had any experience with the language. It felt surreal. That experience changed my relationship with the language and languege learning.",
+    },
+    {
+      title: "French",
+      description:
+        "After the positive experience with Portuguese, I picked up French. It was much harder than I expected. But at my peak in 2019 I was able to speak fairly well. I can still hold simple conversations. I always felt that I will go back to it. The reason I picked it was because I find it very beautiful.",
+    },
+    {
+      title: "Russian",
+      description:
+        "The language that allowed me to learn how to read and write with an alphabet different from the Latin alphabet.",
     },
   ],
   breathwork: [
     {
       title: "Retbirthing Breathwork",
-      description: "A powerful healing practice that I'm blessed to facilitate",
+      description:
+        "A powerful healing practice that, again, took me to profound states of mind and experiences that I could not believe was achievable through breathing. I'm also blessed to facilitate it nowadays.",
     },
     {
       title: "Pranayama",
-      description: "Part of my daily practice",
+      description: "Part of my yoga practice.",
     },
     {
-      title: "Breathing Coaching",
-      description: "A way to help others to breathe better and self regulate",
+      title: "Coherent Breathing",
+      description:
+        "A simple but powerful breathing technique that I practice whenever I need to calm down, relax or focus.",
     },
   ],
 };
@@ -60,7 +89,11 @@ export default function Hobbies() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-white mb-4">Hobbies</h1>
         <p className="text-neutral-300 text-lg mb-6">
-          I created a personal project to spread my passions in{" "}
+          Dancing, yoga, languages ... they are different forms of
+          communication. Through yoga I communicate with myself, though dancing
+          I communicate to others through our bodies and theough languages I
+          communicate with other people and cultures. I created a personal
+          project to spread my passions in{" "}
           <Link
             href="https://dev.carlosconnected.com"
             target="_blank"
