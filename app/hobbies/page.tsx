@@ -1,8 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-
 type Hobby = {
   title: string;
   description: string;
@@ -86,105 +83,77 @@ const hobbies = {
 export default function Hobbies() {
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 text-[#d1bc06] ">
         <h1 className="text-4xl font-bold text-white mb-4">Hobbies</h1>
         <p className="text-neutral-300 text-lg mb-6">
           Dancing, yoga, languages ... they are different forms of
           communication. Through yoga I communicate with myself, though dancing
           I communicate to others through our bodies and theough languages I
-          communicate with other people and cultures. I created a personal
-          project to spread my passions in{" "}
-          <Link
-            href="https://dev.carlosconnected.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-300 hover:text-neutral-200 underline font-semibold"
-          >
-            carlosconnected.com
-          </Link>
-          . This space allows me to share my love for yoga, dancing, and
-          breathwork practices.
+          communicate with other people and cultures.
         </p>
       </div>
 
       <div className="space-y-12">
         {/* Yoga Section - Text left, Image right */}
         <section className="bg-white rounded-xl p-8 shadow-2xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-neutral-900 mb-4">Yoga</h2>
-              <p className="text-neutral-600 mb-6">Present moment awareness</p>
-              <div className="space-y-4">
-                {hobbies.yoga.map((hobby, index) => (
-                  <HobbyCard key={index} hobby={hobby} />
-                ))}
-              </div>
-            </div>
-            <div className="relative w-full h-96 rounded-lg overflow-hidden">
-              <div className="absolute inset-0 translate-x-[-10%] md:translate-x-0">
-                <Image
-                  src="/yoga.jpg"
-                  alt="Yoga practice"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+          <div>
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Yoga</h2>
+            <p className="text-neutral-600 mb-6">Present moment awareness</p>
+            <div className="space-y-4">
+              {hobbies.yoga.map((hobby, index) => (
+                <HobbyCard key={index} hobby={hobby} />
+              ))}
             </div>
           </div>
         </section>
 
         {/* Dancing Section - Image left, Text right */}
         <section className="bg-white rounded-xl p-8 shadow-2xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative w-full h-96 rounded-lg overflow-hidden order-2 md:order-1">
-              <Image
-                src="/dancing.jpg"
-                alt="Dancing practice"
-                fill
-                className="object-cover"
-              />
+          <div>
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">
+              Dancing
+            </h2>
+            <p className="text-neutral-600 mb-6">
+              Communicatig through the body and movement
+            </p>
+            <div className="space-y-4">
+              {hobbies.dancing.map((hobby, index) => (
+                <HobbyCard key={index} hobby={hobby} />
+              ))}
             </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-                Dancing
-              </h2>
-              <p className="text-neutral-600 mb-6">
-                Communicatig through the body and movement
-              </p>
-              <div className="space-y-4">
-                {hobbies.dancing.map((hobby, index) => (
-                  <HobbyCard key={index} hobby={hobby} />
-                ))}
-              </div>
+          </div>
+        </section>
+
+        {/* Languages Section - Image left, Text right */}
+        <section className="bg-white rounded-xl p-8 shadow-2xl">
+          <div>
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">
+              Languages
+            </h2>
+            <p className="text-neutral-600 mb-6">
+              Connecting with other cultures and people
+            </p>
+            <div className="space-y-4">
+              {hobbies.languages.map((hobby, index) => (
+                <HobbyCard key={index} hobby={hobby} />
+              ))}
             </div>
           </div>
         </section>
 
         {/* Breathwork Section - Text left, Image right */}
         <section className="bg-white rounded-xl p-8 shadow-2xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-                Breathwork
-              </h2>
-              <p className="text-neutral-600 mb-6">
-                The power and magic of breathing
-              </p>
-              <div className="space-y-4">
-                {hobbies.breathwork.map((hobby, index) => (
-                  <HobbyCard key={index} hobby={hobby} />
-                ))}
-              </div>
-            </div>
-            <div className="relative w-full h-96 rounded-lg overflow-hidden">
-              <div className="absolute inset-0 translate-x-[-10%] md:translate-x-0">
-                <Image
-                  src="/breathwork.jpg"
-                  alt="Breathwork practice"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+          <div>
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">
+              Breathwork
+            </h2>
+            <p className="text-neutral-600 mb-6">
+              The power and magic of breathing
+            </p>
+            <div className="space-y-4">
+              {hobbies.breathwork.map((hobby, index) => (
+                <HobbyCard key={index} hobby={hobby} />
+              ))}
             </div>
           </div>
         </section>

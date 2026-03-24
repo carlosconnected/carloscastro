@@ -15,7 +15,7 @@ const projects = [
       "A project focused on helping people learn how to speak a foreign language. The app features are based on science and research.",
   },
   {
-    name: "carlosconnected.com",
+    name: "CarlosConnected.com",
     url: "https://carlosconnected.com",
     description:
       "Space I have to spread my passion for breathing and body movement.",
