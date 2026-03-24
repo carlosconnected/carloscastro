@@ -31,10 +31,6 @@ export default function PersonalInfo() {
           Building scalable, production-grade systems.
         </p>
 
-        <p className="mt-4 text-sm font-medium text-green-700 animate-slide-in-right">
-          Open to remote contract & full-time opportunities
-        </p>
-
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 animate-reveal">
           <Link
             href="/Carlos_Castro_Vargas_2026.pdf"

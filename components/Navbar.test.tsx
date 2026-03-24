@@ -10,6 +10,9 @@ describe("Navbar", () => {
       "href",
       "/hobbies"
     );
+    expect(
+      screen.getByRole("link", { name: /personal projects/i })
+    ).toHaveAttribute("href", "/personal-projects");
     expect(screen.getByRole("link", { name: /sudoku/i })).toHaveAttribute(
       "href",
       "/sudoku"
@@ -35,6 +38,9 @@ describe("Navbar", () => {
     const mobileNav = navs[1];
     expect(within(mobileNav).getByRole("link", { name: /home/i })).toBeInTheDocument();
     expect(within(mobileNav).getByRole("link", { name: /hobbies/i })).toBeInTheDocument();
+    expect(
+      within(mobileNav).getByRole("link", { name: /personal projects/i })
+    ).toBeInTheDocument();
     expect(within(mobileNav).getByRole("link", { name: /sudoku/i })).toBeInTheDocument();
   });
 
