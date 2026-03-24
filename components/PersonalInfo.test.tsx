@@ -12,7 +12,7 @@ describe("PersonalInfo", () => {
   it("renders the description", () => {
     render(<PersonalInfo />);
     expect(
-      screen.getByText(/Open to remote contract & full-time opportunities/i),
+      screen.getByText(/Building scalable, production-grade systems/i),
     ).toBeInTheDocument();
   });
 
