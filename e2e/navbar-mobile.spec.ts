@@ -6,7 +6,7 @@ test("mobile menu opens and shows nav links", async ({ page }) => {
 
   await page.getByRole("button", { name: "Toggle menu" }).click();
   await expect(page.getByRole("link", { name: "Hobbies" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Personal projects" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Projects" })).toBeVisible();
   await expect(page.getByRole("link", { name: "Sudoku" })).toBeVisible();
 });
 

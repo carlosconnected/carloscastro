@@ -5,17 +5,21 @@ import Navbar from "./Navbar";
 describe("Navbar", () => {
   it("renders desktop nav links", () => {
     render(<Navbar />);
-    expect(screen.getByRole("link", { name: /home/i })).toHaveAttribute("href", "/");
+    expect(screen.getByRole("link", { name: /home/i })).toHaveAttribute(
+      "href",
+      "/",
+    );
     expect(screen.getByRole("link", { name: /hobbies/i })).toHaveAttribute(
       "href",
-      "/hobbies"
+      "/hobbies",
     );
-    expect(
-      screen.getByRole("link", { name: /personal projects/i })
-    ).toHaveAttribute("href", "/personal-projects");
+    expect(screen.getByRole("link", { name: /projects/i })).toHaveAttribute(
+      "href",
+      "/personal-projects",
+    );
     expect(screen.getByRole("link", { name: /sudoku/i })).toHaveAttribute(
       "href",
-      "/sudoku"
+      "/sudoku",
     );
   });
 
@@ -36,12 +40,18 @@ describe("Navbar", () => {
     expect(toggle).toHaveAttribute("aria-expanded", "true");
     const navs = screen.getAllByRole("navigation");
     const mobileNav = navs[1];
-    expect(within(mobileNav).getByRole("link", { name: /home/i })).toBeInTheDocument();
-    expect(within(mobileNav).getByRole("link", { name: /hobbies/i })).toBeInTheDocument();
     expect(
-      within(mobileNav).getByRole("link", { name: /personal projects/i })
+      within(mobileNav).getByRole("link", { name: /home/i }),
     ).toBeInTheDocument();
-    expect(within(mobileNav).getByRole("link", { name: /sudoku/i })).toBeInTheDocument();
+    expect(
+      within(mobileNav).getByRole("link", { name: /hobbies/i }),
+    ).toBeInTheDocument();
+    expect(
+      within(mobileNav).getByRole("link", { name: /projects/i }),
+    ).toBeInTheDocument();
+    expect(
+      within(mobileNav).getByRole("link", { name: /sudoku/i }),
+    ).toBeInTheDocument();
   });
 
   it("closes mobile menu when a link is clicked", async () => {
