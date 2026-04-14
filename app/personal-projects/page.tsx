@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Personal projects",
+  title: "Personal Projects",
   description:
     "SpeakGym.ai and carlosconnected.com — projects by Carlos Castro Vargas.",
 };
